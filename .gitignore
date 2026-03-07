@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+public
+sajad.jpg
+
 CLAUDE.md
 .claude
