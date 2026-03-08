@@ -34,22 +34,25 @@ const JOBS: Job[] = [
     company: 'SubmitterAI',
     period: 'Nov 2025 – Present',
     bullets: [
-      'Built a RAG pipeline using pgvector and Go to enable semantic search across submission documents.',
-      'Designed gRPC service interfaces between internal microservices, reducing inter-service latency by 30%.',
-      'Instrumented services with Prometheus metrics and set up alerting dashboards to monitor pipeline health.',
-      'Implemented Redis-based caching layer for frequently accessed submission metadata.',
+      'Built a RAG API in Go that retrieves semantically relevant answers across 6,300+ documents using pgvector for vector similarity search on PostgreSQL.',
+      'Designed a dual-protocol API layer exposing both gRPC and REST from a single service, with JWT authentication, per-IP rate limiting, and Prometheus metrics via unary interceptors.',
+      'Achieved sub-1000ms p99 latency for live LLM queries (Groq API) and ~10ms response times for cached queries through Redis based caching and optimized query execution.',
+      'Built a concurrent embedding ingestion pipeline using a bounded worker pool to embed using OpenAI API and store 6,300+ documents into pgvector with HNSW indexing for fast approximate nearest-neighbor search.',
+      'Authored a CSV to JSONL normalization pipeline converting raw data into a structured corpus optimized for English-only RAG retrieval, with a full automated test suite.',
     ],
     tags: ['Go', 'RAG', 'pgvector', 'gRPC', 'Redis', 'Prometheus'],
   },
   {
-    role: 'Full Stack Developer',
+    role: 'Full Stack Developer (Backend Focused)',
     company: 'PSS',
     period: 'Mar 2025 – Oct 2025',
     bullets: [
-      'Developed RESTful APIs with NestJS and MySQL to support a multi-tenant SaaS platform.',
-      'Integrated Stripe for subscription billing, handling webhooks and idempotent payment flows.',
-      'Built React dashboards for real-time reporting, reducing manual reporting work for operations staff.',
-      'Containerized services with Docker and deployed to Kubernetes, improving release cadence.',
+      'Built and deployed an e-commerce platform (15K+ records) with Nest.js, MySQL/Prisma, React.js, and integrated Stripe API for online payments, reducing load times 30s→0.5s.',
+      'Developed 20+ high-performance RESTful APIs and optimized database performance through indexing and query tuning, significantly reducing query execution times.',
+      'Implemented JWT/Passport.js/bcrypt authentication and Jest test coverage.',
+      'Normalized and migrated multiple databases into a single unified, production ready schema using Python.',
+      'Built Python based web scrapers with BeautifulSoup to automate record creation and perform data sanitation.',
+      'Automated CI/CD deployments to a Linux/Apache server using GitHub Actions, Docker Compose, and Kubernetes manifests, with Sentry monitoring.',
     ],
     tags: ['NestJS', 'MySQL', 'React', 'Stripe', 'Kubernetes', 'Docker'],
   },
@@ -58,21 +61,19 @@ const JOBS: Job[] = [
     company: 'Beyond Digital',
     period: 'Feb 2024 – Nov 2024',
     bullets: [
-      'Architected and delivered a content management platform using React and Node.js from scratch.',
-      'Designed a dual-database strategy using MongoDB for flexible content storage and PostgreSQL for relational data.',
-      'Deployed cloud infrastructure on AWS (EC2, S3, RDS) and configured CI/CD pipelines with GitHub Actions.',
-      'Optimized slow API endpoints by adding query indexes and connection pooling, cutting p99 latency by 40%.',
+      'Implemented custom, scalable websites using React.js and REST APIs built with Node.js/Express.js and MongoDB/PostgreSQL databases, ensuring optimal performance and user experience.',
+      'Designed CI/CD pipelines to automate deployments, improving delivery speed and minimizing downtime.',
+      'Utilized AWS services such as S3, IAM and Route 53 for cloud hosting and deployment of static websites.',
     ],
     tags: ['React', 'Node.js', 'MongoDB', 'PostgreSQL', 'AWS'],
   },
   {
-    role: 'Mobile Developer',
+    role: 'Technical Product Manager',
     company: 'Maple',
     period: 'May 2021 – Jun 2023',
     bullets: [
-      'Built cross-platform mobile features in Flutter for a healthcare app serving thousands of daily active users.',
-      'Integrated Firestore for real-time patient–provider messaging and appointment status updates.',
-      'Worked with MySQL backend to surface patient history and prescription data in the mobile client.',
+      'Partnered closely with backend engineers on system architecture for a production Flutter app (1,000+ users)',
+      'Optimized Firestore/MySQL queries (including geo-queries) and led a cloud migration that cut infrastructure costs by 40%.',
     ],
     tags: ['Flutter', 'Firestore', 'MySQL'],
   },
@@ -247,13 +248,13 @@ function About() {
           <div className="about__grid">
             <div className="about__body">
               <p>
-                I am a backend developer with over four years of experience building scalable, production-grade systems. My work spans microservices, data pipelines, and cloud infrastructure, with a focus on correctness, performance, and maintainability.
+                I am a backend developer with over two years of experience building scalable, production-grade systems. My work spans microservices, data pipelines, and cloud infrastructure, with a focus on correctness, performance, and maintainability.
               </p>
               <p>
-                I am most fluent in Go and TypeScript, and I have shipped real-world products across healthcare, SaaS, and AI verticals. I care about clean API design, observable systems, and keeping operational complexity low.
+                I am most fluent in Go, JavaScript/TypeScript and Python, and I have shipped real-world products across ecommerce, SaaS, and AI verticals. I care about clean API design, observable systems, and keeping operational complexity low.
               </p>
               <p>
-                Currently open to backend and full-stack roles in Toronto or remote. I value teams that move with purpose and hold high engineering standards.
+                Currently open to backend and full-stack roles in anywhere in Canada. I value teams that move with purpose and hold high engineering standards.
               </p>
             </div>
             <div className="about__photo-wrap">
