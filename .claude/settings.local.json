@@ -6,7 +6,12 @@
       "Bash(npm show:*)",
       "Bash(node:*)",
       "Bash(git:*)",
-      "Bash(winget install:*)"
+      "Bash(winget install:*)",
+      "Bash(rsync:*)",
+      "Bash(ssh:*)",
+      "Bash(sudo:*)",
+      "Bash(cp:*)",
+      "Bash(curl:*)"
     ]
   },
   "enabledPlugins": {
