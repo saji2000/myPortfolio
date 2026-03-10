@@ -36,7 +36,7 @@ const JOBS: Job[] = [
     bullets: [
       'Built a RAG API in Go that retrieves semantically relevant answers across 6,300+ documents using pgvector for vector similarity search on PostgreSQL.',
       'Designed a dual-protocol API layer exposing both gRPC and REST from a single service, with JWT authentication, per-IP rate limiting, and Prometheus metrics via unary interceptors.',
-      'Achieved sub-1000ms p99 latency for live LLM queries (Groq API) and ~10ms response times for cached queries through Redis based caching and optimized query execution.',
+      'Achieved sub-2000ms p99 latency for live LLM queries (Groq API) and ~10ms response times for cached queries through Redis based caching and optimized query execution.',
       'Built a concurrent embedding ingestion pipeline using a bounded worker pool to embed using OpenAI API and store 6,300+ documents into pgvector with HNSW indexing for fast approximate nearest-neighbor search.',
       'Authored a CSV to JSONL normalization pipeline converting raw data into a structured corpus optimized for English-only RAG retrieval, with a full automated test suite.',
     ],

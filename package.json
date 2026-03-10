@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sync": "aws s3 sync ./dist \"s3://sajaddaneshmand.com/\""
+    "sync": "cp -r /home/sajad/development/resume/myPortfolio/dist/* /var/www/portfolio/"
   },
   "dependencies": {
     "lucide-react": "^0.577.0",
