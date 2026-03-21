@@ -30,29 +30,29 @@ interface SkillGroup {
 
 const JOBS: Job[] = [
   {
-    role: 'Backend Developer',
+    role: 'AI/Backend Engineer',
     company: 'SubmitterAI',
     period: 'Nov 2025 – Present',
     bullets: [
-      'Built a RAG API in Go that retrieves semantically relevant answers across 6,300+ documents using pgvector for vector similarity search on PostgreSQL.',
-      'Designed a dual-protocol API layer exposing both gRPC and REST from a single service, with JWT authentication, per-IP rate limiting, and Prometheus metrics via unary interceptors.',
-      'Achieved sub-2000ms p99 latency for live LLM queries (Groq API) and ~10ms response times for cached queries through Redis based caching and optimized query execution.',
-      'Built a concurrent embedding ingestion pipeline using a bounded worker pool to embed using OpenAI API and store 6,300+ documents into pgvector with HNSW indexing for fast approximate nearest-neighbor search.',
-      'Authored a CSV to JSONL normalization pipeline converting raw data into a structured corpus optimized for English-only RAG retrieval, with a full automated test suite.',
+      'Architected a two tier RAG pipeline in Go with cosine similarity routing local generation (<2s) vs. Python LangGraph multi-hop agent (<10s).',
+      'Designed a dual protocol API layer (gRPC + REST) with JWT auth, per-IP rate limiting, and Prometheus metrics.',
+      'Achieved <2000ms p99 for live LLM queries (Groq) and ~10ms for cached queries via Redis.',
+      'Built a concurrent ingestion pipeline with a bounded worker pool to embed ~1500 pages into pgvector with HNSW indexing.',
+      'Built a fault tolerant sidecar with mid request fallback to local generation if the Python FastAPI/LangChain service fails.',
     ],
     tags: ['Go', 'RAG', 'pgvector', 'gRPC', 'Redis', 'Prometheus'],
   },
   {
-    role: 'Full Stack Developer (Backend Focused)',
+    role: 'Software Engineer (Backend)',
     company: 'PSS',
     period: 'Mar 2025 – Oct 2025',
     bullets: [
-      'Built and deployed an e-commerce platform (15K+ records) with Nest.js, MySQL/Prisma, React.js, and integrated Stripe API for online payments, reducing load times 30s→0.5s.',
-      'Developed 20+ high-performance RESTful APIs and optimized database performance through indexing and query tuning, significantly reducing query execution times.',
-      'Implemented JWT/Passport.js/bcrypt authentication and Jest test coverage.',
-      'Normalized and migrated multiple databases into a single unified, production ready schema using Python.',
-      'Built Python based web scrapers with BeautifulSoup to automate record creation and perform data sanitation.',
-      'Automated CI/CD deployments to a Linux/Apache server using GitHub Actions, Docker Compose, and Kubernetes manifests, with Sentry monitoring.',
+      'Built and deployed an e-commerce platform (15K+ records) with NestJS, MySQL/Prisma, and React, cutting load times from 30s → 0.5s.',
+      'Developed 20+ RESTful APIs with optimized DB performance via indexing.',
+      'Implemented JWT/Passport.js/bcrypt auth with Jest test coverage.',
+      'Normalized and migrated multiple databases into a unified production schema using Python.',
+      'Built BeautifulSoup web scrapers to automate record creation and data sanitation.',
+      'Automated CI/CD to Linux/Apache via GitHub Actions, Docker Compose, and Kubernetes with Sentry monitoring.',
     ],
     tags: ['NestJS', 'MySQL', 'React', 'Stripe', 'Kubernetes', 'Docker'],
   },
@@ -208,7 +208,7 @@ function Hero() {
     <section id="hero" className="hero">
       <div className="hero__container">
         <div ref={ref} className="fade-in">
-          <span className="hero__eyebrow">Backend Engineer</span>
+          <span className="hero__eyebrow">AI/Backend Engineer</span>
           <h1 className="hero__name">Sajad Daneshmand</h1>
           <p className="hero__location">
             <MapPin size={15} />
@@ -223,7 +223,7 @@ function Hero() {
               <Linkedin size={16} />
               LinkedIn
             </a>
-            <a href="mailto:sajaddaneshmand79@gmail.com" className="btn btn--outline">
+            <a href="mailto:me@sajaddaneshmand.com" className="btn btn--outline">
               <Mail size={16} />
               Email
             </a>
@@ -251,10 +251,10 @@ function About() {
                 I am a backend developer with over two years of experience building scalable, production-grade systems. My work spans microservices, data pipelines, and cloud infrastructure, with a focus on correctness, performance, and maintainability.
               </p>
               <p>
-                I am most fluent in Go, JavaScript/TypeScript and Python, and I have shipped real-world products across ecommerce, SaaS, and AI verticals. I care about clean API design, observable systems, and keeping operational complexity low.
+                I mostly work with Go, JavaScript/TypeScript and Python, and I have shipped real-world products across ecommerce, SaaS, and AI verticals. I care about clean API design, observable systems, and keeping operational complexity low.
               </p>
               <p>
-                Currently open to backend and full-stack roles in anywhere in Canada. I value teams that move with purpose and hold high engineering standards.
+                Currently open to Backend and AI Engineer roles in anywhere in Canada. I value teams that move with purpose and hold high engineering standards.
               </p>
             </div>
             <div className="about__photo-wrap">
@@ -396,9 +396,9 @@ function Contact() {
           Open to backend and full-stack opportunities. Reach out via email or connect on LinkedIn.
         </p>
         <div className="contact__links">
-          <a href="mailto:sajaddaneshmand79@gmail.com" className="btn btn--primary">
+          <a href="mailto:me@sajaddaneshmand.com" className="btn btn--primary">
             <Mail size={16} />
-            sajaddaneshmand79@gmail.com
+            me@sajaddaneshmand.com
           </a>
           <a href="https://github.com/saji2000" target="_blank" rel="noopener noreferrer" className="btn btn--outline">
             <Github size={16} />
