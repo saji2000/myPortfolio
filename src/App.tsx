@@ -30,7 +30,7 @@ interface SkillGroup {
 
 const JOBS: Job[] = [
   {
-    role: 'AI/Backend Engineer',
+    role: 'Backend Engineer',
     company: 'SubmitterAI',
     period: 'Nov 2025 – Present',
     bullets: [
@@ -208,7 +208,7 @@ function Hero() {
     <section id="hero" className="hero">
       <div className="hero__container">
         <div ref={ref} className="fade-in">
-          <span className="hero__eyebrow">AI/Backend Engineer</span>
+          <span className="hero__eyebrow">Backend Engineer</span>
           <h1 className="hero__name">Sajad Daneshmand</h1>
           <p className="hero__location">
             <MapPin size={15} />
@@ -248,7 +248,7 @@ function About() {
           <div className="about__grid">
             <div className="about__body">
               <p>
-                I am a backend developer with over two years of experience building scalable, production-grade systems. My work spans microservices, data pipelines, and cloud infrastructure, with a focus on correctness, performance, and maintainability.
+                I am a backend Engineer with over two years of experience building scalable, production-grade systems. My work spans microservices, data pipelines, and cloud infrastructure, with a focus on correctness, performance, and maintainability.
               </p>
               <p>
                 I mostly work with Go, JavaScript/TypeScript and Python, and I have shipped real-world products across ecommerce, SaaS, and AI verticals. I care about clean API design, observable systems, and keeping operational complexity low.
