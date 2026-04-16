@@ -30,17 +30,17 @@ interface SkillGroup {
 
 const JOBS: Job[] = [
   {
-    role: 'Backend Engineer',
+    role: 'AI Backend Engineer',
     company: 'SubmitterAI',
     period: 'Nov 2025 – Present',
     bullets: [
-      'Architected a two tier RAG pipeline in Go with cosine similarity routing local generation (<2s) vs. Python LangGraph multi-hop agent (<10s).',
-      'Designed a dual protocol API layer (gRPC + REST) with JWT auth, per-IP rate limiting, and Prometheus metrics.',
-      'Achieved <2000ms p99 for live LLM queries (Groq) and ~10ms for cached queries via Redis.',
-      'Built a concurrent ingestion pipeline with a bounded worker pool to embed ~1500 pages into pgvector with HNSW indexing.',
-      'Built a fault tolerant sidecar with mid request fallback to local generation if the Python FastAPI/LangChain service fails.',
+      'Built production RAG pipeline (Go/Python) with cosine routing and <3s local generation.',
+      'Developed LangGraph state machine (FastAPI) with query expansion, pgvector retrieval, and multi-hop fallback (<10s).',
+      'Designed four-tier retrieval model with enforced citation hierarchy across LLM calls.',
+      'Enabled history-aware multi-turn conversations with context injection and scoped reasoning.',
+      'Engineered LLM guardrails (Go/Python): persona protection, scope filtering, and citation enforcement.',
     ],
-    tags: ['Go', 'RAG', 'pgvector', 'gRPC', 'Redis', 'Prometheus'],
+    tags: ['Go', 'Python', 'RAG', 'pgvector', 'gRPC', 'Redis', 'Prometheus'],
   },
   {
     role: 'Software Engineer (Backend)',
@@ -54,7 +54,7 @@ const JOBS: Job[] = [
       'Built BeautifulSoup web scrapers to automate record creation and data sanitation.',
       'Automated CI/CD to Linux/Apache via GitHub Actions, Docker Compose, and Kubernetes with Sentry monitoring.',
     ],
-    tags: ['NestJS', 'MySQL', 'React', 'Stripe', 'Kubernetes', 'Docker'],
+    tags: ['NestJS', 'Python', 'MySQL', 'React', 'Stripe', 'Kubernetes', 'Docker'],
   },
   {
     role: 'Full Stack Developer',
@@ -80,7 +80,7 @@ const JOBS: Job[] = [
 ]
 
 const SKILL_GROUPS: SkillGroup[] = [
-  { category: 'Languages', skills: ['Go', 'TypeScript', 'JavaScript', 'Python'] },
+  { category: 'Languages', skills: ['Go', 'Python', 'TypeScript', 'JavaScript' ] },
   { category: 'Backend', skills: ['Go', 'Node.js', 'Nest.js', 'Express.js'] },
   { category: 'Frontend', skills: ['React.js', 'HTML', 'CSS'] },
   { category: 'Databases', skills: ['PostgreSQL', 'MySQL', 'MongoDB'] },
@@ -208,7 +208,7 @@ function Hero() {
     <section id="hero" className="hero">
       <div className="hero__container">
         <div ref={ref} className="fade-in">
-          <span className="hero__eyebrow">Backend Engineer</span>
+          <span className="hero__eyebrow">AI Backend Engineer</span>
           <h1 className="hero__name">Sajad Daneshmand</h1>
           <p className="hero__location">
             <MapPin size={15} />
